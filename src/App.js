@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { DragDropContext } from "react-beautiful-dnd";
 
 function App() {
+  const onBeforeDragStart = () => {
+    console.log("onBeforeDragStart");
+  };
+
+  const onDragStart = () => {
+    console.log("onDragStart");
+  };
+
+  const onDragUpdate = () => {
+    console.log("onDragUpdate");
+  };
+
+  const onDragEnd = () => {
+    console.log("onDragEnd");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <DragDropContext
+        onBeforeDragStart={onBeforeDragStart}
+        onDragStart={onDragStart}
+        onDragUpdate={onDragUpdate}
+        onDragEnd={onDragEnd}
+      >
+        <div>hello word</div>
+      </DragDropContext>
     </div>
   );
 }
