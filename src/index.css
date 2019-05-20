@@ -14,5 +14,12 @@ code {
 }
 
 .app {
-  height: 500px;
+  padding: 10px;
+}
+
+.draggable {
+  user-select: none;
+  padding: 16px;
+  margin: 0px 0px 8px;
+  background: grey;
 }
